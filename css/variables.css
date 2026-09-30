@@ -1,0 +1,95 @@
+:root {
+
+    /* =========================================================
+       COLORS
+    ========================================================= */
+
+    --color-blush: #f6b7cf;
+    --color-rose: #dc7fa6;
+    --color-dusty-pink: #c982a4;
+
+    --color-lilac: #c9b4f5;
+    --color-lavender: #a88de2;
+
+    --color-purple: #7651a8;
+    --color-deep-purple: #45255f;
+
+    --color-plum: #170d20;
+    --color-dark: #0b0610;
+
+    --color-white: #fff8fc;
+    --color-cream: #fff1f7;
+
+    --color-text-muted: #cdbccc;
+
+
+    /* =========================================================
+       GRADIENTS
+    ========================================================= */
+
+    --gradient-pink-lilac:
+        linear-gradient(
+            135deg,
+            var(--color-rose),
+            var(--color-lilac)
+        );
+
+    --gradient-rose-purple:
+        linear-gradient(
+            135deg,
+            var(--color-dusty-pink),
+            var(--color-purple)
+        );
+
+    --gradient-dark:
+        linear-gradient(
+            135deg,
+            var(--color-dark),
+            var(--color-plum)
+        );
+
+
+    /* =========================================================
+       EFFECTS
+    ========================================================= */
+
+    --glow-pink:
+        0 0 30px rgba(246, 183, 207, .25);
+
+    --glow-lilac:
+        0 0 30px rgba(201, 180, 245, .25);
+
+    --border-glass:
+        1px solid rgba(255, 255, 255, .10);
+
+    --glass-background:
+        rgba(255, 255, 255, .045);
+
+    --glass-blur:
+        blur(20px);
+
+
+    /* =========================================================
+       TYPOGRAPHY
+    ========================================================= */
+
+    --font-display:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    --font-body:
+        "Inter",
+        Arial,
+        sans-serif;
+
+
+    /* =========================================================
+       LAYOUT
+    ========================================================= */
+
+    --content-width: 1100px;
+
+    --section-padding: 140px 24px;
+
+}

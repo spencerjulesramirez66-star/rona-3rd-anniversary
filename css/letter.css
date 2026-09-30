@@ -1,0 +1,282 @@
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    text-align: center;
+}
+
+.intro h2 {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    font-size:
+        clamp(
+            3.5rem,
+            7vw,
+            6rem
+        );
+}
+
+.intro__text {
+    max-width: 600px;
+
+    margin: 20px auto;
+
+    font-size: 1rem;
+    line-height: 2;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-card {
+    position: relative;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding:
+        clamp(40px, 7vw, 85px);
+
+    border:
+        1px solid rgba(246, 183, 207, .13);
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .055),
+            rgba(255, 255, 255, .018)
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, .35),
+        inset 0 1px 0 rgba(255, 255, 255, .05);
+
+    backdrop-filter: blur(25px);
+}
+
+.letter-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid rgba(201, 180, 245, .06);
+
+    pointer-events: none;
+}
+
+.letter-card__decoration {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+}
+
+.letter-card__header {
+    margin-bottom: 55px;
+}
+
+.letter-card__header h2 {
+    font-size:
+        clamp(
+            2.8rem,
+            6vw,
+            5rem
+        );
+
+    color: var(--color-cream);
+}
+
+.letter-content {
+    position: relative;
+    z-index: 1;
+}
+
+.letter-content p {
+    margin-bottom: 27px;
+
+    color: rgba(255, 248, 252, .78);
+
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+.letter-content__ending {
+    margin-top: 55px;
+
+    color: var(--color-blush) !important;
+
+    font-size: 1.7rem !important;
+}
+
+.letter-content__signature {
+    color: var(--color-lilac) !important;
+
+    font-size: 1.15rem !important;
+}
+
+.letter-content__signature span {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--color-rose);
+
+    font-size: 1.8rem;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.quote-card {
+    position: relative;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 80px 40px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(201, 180, 245, .14);
+
+    border-bottom:
+        1px solid rgba(201, 180, 245, .14);
+}
+
+.quote-card__mark {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--color-rose);
+
+    font-family: var(--font-display);
+    font-size: 5rem;
+    line-height: .5;
+}
+
+.quote-card blockquote {
+    color: var(--color-cream);
+
+    font-family: var(--font-display);
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.4rem
+        );
+
+    line-height: 1.15;
+}
+
+.quote-card__flower {
+    margin-top: 30px;
+
+    color: var(--color-lilac);
+
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.closing {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+}
+
+.closing__content {
+    width: min(100%, 700px);
+    margin: 0 auto;
+}
+
+.closing h2 {
+    margin-bottom: 35px;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            7rem
+        );
+}
+
+.closing p {
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.closing__heart {
+    margin-top: 50px;
+
+    color: var(--color-rose);
+
+    font-size: 2rem;
+
+    animation:
+        pulseGlow 3s ease-in-out infinite;
+}
+
+.lily--closing {
+    margin-bottom: 40px;
+    opacity: .65;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    padding: 30px 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .06);
+
+    color: rgba(255, 255, 255, .35);
+
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.footer__heart {
+    color: var(--color-rose);
+    font-size: .9rem;
+}

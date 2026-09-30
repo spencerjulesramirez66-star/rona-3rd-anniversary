@@ -1,0 +1,66 @@
+@media (max-width: 700px) {
+
+    :root {
+        --section-padding: 100px 20px;
+    }
+
+    .hero {
+        min-height: 100svh;
+
+        padding:
+            80px 20px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                4rem,
+                18vw,
+                6rem
+            );
+    }
+
+    .hero__description {
+        font-size: .85rem;
+    }
+
+    .hero__scroll {
+        bottom: 20px;
+    }
+
+    .letter-card {
+        padding: 50px 28px;
+    }
+
+    .letter-card::before {
+        inset: 8px;
+    }
+
+    .letter-card__decoration {
+        top: 18px;
+        right: 18px;
+        opacity: .5;
+    }
+
+    .letter-card__header {
+        margin-bottom: 40px;
+    }
+
+    .letter-content p {
+        font-size: 1.15rem;
+    }
+
+    .quote-card {
+        padding:
+            60px 20px;
+    }
+
+    .closing {
+        min-height: 70vh;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

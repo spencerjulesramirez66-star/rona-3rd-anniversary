@@ -1,0 +1,581 @@
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    background:
+        #0b0610;
+
+    color: var(--color-white);
+
+    font-family: var(--font-body);
+
+    font-weight: 300;
+
+    line-height: 1.7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+main {
+    position: relative;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    position: relative;
+
+    padding: var(--section-padding);
+}
+
+.section__container {
+    width: min(
+        100%,
+        var(--content-width)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.section__eyebrow {
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: var(--color-lilac);
+
+    font-family: var(--font-body);
+
+    font-size: .68rem;
+
+    font-weight: 500;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 20px
+        rgba(201, 180, 245, .35);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+
+    font-weight: 400;
+
+    line-height: .95;
+}
+
+h1 span,
+h2 em {
+    display: block;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-blush),
+            var(--color-lilac)
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    font-style: normal;
+
+    text-shadow:
+        0 0 35px
+        rgba(220, 127, 166, .12);
+}
+
+p {
+    color: var(--color-text-muted);
+}
+
+::selection {
+    background:
+        rgba(220, 127, 166, .35);
+
+    color: white;
+}
+
+
+/* =========================================================
+   CINEMATIC BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    overflow: hidden;
+
+    /*
+        IMPORTANT:
+        This is the main visible color layer.
+
+        Pink
+        ↓
+        Lilac
+        ↓
+        Purple
+        ↓
+        Deep Plum
+    */
+
+    background:
+
+        /* TOP LEFT — ROSE/PINK */
+        radial-gradient(
+            ellipse 70% 65% at 5% 5%,
+            rgba(224, 103, 157, .38),
+            rgba(190, 75, 135, .16) 35%,
+            transparent 70%
+        ),
+
+        /* TOP RIGHT — LILAC */
+        radial-gradient(
+            ellipse 65% 70% at 100% 15%,
+            rgba(175, 140, 235, .38),
+            rgba(125, 85, 190, .16) 38%,
+            transparent 72%
+        ),
+
+        /* CENTER — SOFT PINK */
+        radial-gradient(
+            ellipse 55% 50% at 50% 40%,
+            rgba(204, 100, 157, .16),
+            transparent 70%
+        ),
+
+        /* BOTTOM — PURPLE */
+        radial-gradient(
+            ellipse 75% 60% at 50% 105%,
+            rgba(110, 55, 160, .40),
+            rgba(70, 30, 105, .18) 45%,
+            transparent 75%
+        ),
+
+        /* DEEP CINEMATIC BASE */
+        linear-gradient(
+            135deg,
+            #09050d 0%,
+            #170a1d 30%,
+            #1d0d29 52%,
+            #13091c 75%,
+            #08040c 100%
+        );
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.background__glow {
+    position: absolute;
+
+    width: 55vw;
+    height: 55vw;
+
+    min-width: 500px;
+    min-height: 500px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(100px);
+
+    opacity: .55;
+
+    animation:
+        ambientFloat
+        16s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =========================================================
+   PINK GLOW
+========================================================= */
+
+.background__glow--pink {
+    top: -25%;
+    left: -20%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(246, 130, 175, .75) 0%,
+            rgba(220, 100, 155, .40) 30%,
+            rgba(190, 70, 135, .12) 55%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   LILAC GLOW
+========================================================= */
+
+.background__glow--lilac {
+    top: 5%;
+    right: -25%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(205, 175, 250, .72) 0%,
+            rgba(170, 130, 230, .40) 30%,
+            rgba(120, 75, 180, .12) 55%,
+            transparent 72%
+        );
+
+    animation-delay: -5s;
+}
+
+
+/* =========================================================
+   PURPLE GLOW
+========================================================= */
+
+.background__glow--purple {
+    bottom: -35%;
+    left: 20%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(130, 75, 185, .70) 0%,
+            rgba(100, 50, 155, .38) 35%,
+            rgba(70, 30, 110, .12) 55%,
+            transparent 72%
+        );
+
+    animation-delay: -9s;
+}
+
+
+@keyframes ambientFloat {
+
+    0% {
+        transform:
+            translate3d(
+                -2%,
+                0,
+                0
+            )
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(
+                4%,
+                -3%,
+                0
+            )
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            translate3d(
+                -3%,
+                5%,
+                0
+            )
+            scale(1.15);
+    }
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles,
+#stars,
+#petals {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particle {
+    position: absolute;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-lilac);
+
+    box-shadow:
+        0 0 8px
+        rgba(201, 180, 245, .7),
+
+        0 0 18px
+        rgba(201, 180, 245, .25);
+
+    opacity: .35;
+
+    animation:
+        particleFloat
+        6s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+
+        opacity: .2;
+    }
+
+    50% {
+        transform:
+            translateY(-18px);
+
+        opacity: .75;
+    }
+
+}
+
+
+/* =========================================================
+   PETALS
+========================================================= */
+
+.petal {
+    position: absolute;
+
+    top: -30px;
+
+    width: 9px;
+    height: 15px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    border:
+        1px solid
+        rgba(246, 183, 207, .65);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(246, 183, 207, .28),
+            rgba(201, 180, 245, .12)
+        );
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(220, 127, 166, .25)
+        );
+
+    animation:
+        petalFall
+        linear
+        infinite;
+}
+
+
+@keyframes petalFall {
+
+    0% {
+        transform:
+            translate3d(
+                0,
+                -10vh,
+                0
+            )
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .7;
+    }
+
+    90% {
+        opacity: .5;
+    }
+
+    100% {
+        transform:
+            translate3d(
+                var(--drift),
+                110vh,
+                0
+            )
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.star {
+    position: absolute;
+
+    display: block;
+
+    border-radius: 50%;
+
+    opacity: .45;
+
+    animation:
+        starTwinkle
+        ease-in-out
+        infinite;
+}
+
+
+/*
+    Instead of making every star white,
+    distribute pink, lilac and white.
+*/
+
+.star:nth-child(3n) {
+    background:
+        var(--color-blush);
+
+    box-shadow:
+        0 0 8px
+        rgba(246, 183, 207, .85);
+}
+
+
+.star:nth-child(3n + 1) {
+    background:
+        var(--color-lilac);
+
+    box-shadow:
+        0 0 8px
+        rgba(201, 180, 245, .85);
+}
+
+
+.star:nth-child(3n + 2) {
+    background:
+        var(--color-white);
+
+    box-shadow:
+        0 0 7px
+        rgba(255, 255, 255, .7);
+}
+
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+        opacity: .15;
+
+        transform:
+            scale(.8);
+    }
+
+    50% {
+        opacity: .85;
+
+        transform:
+            scale(1.3);
+    }
+
+}
+
+
+/* =========================================================
+   SELECTION / SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b0610;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--color-rose),
+            var(--color-lavender)
+        );
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            var(--color-blush),
+            var(--color-lilac)
+        );
+}
